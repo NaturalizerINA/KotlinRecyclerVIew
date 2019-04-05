@@ -8,13 +8,13 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.item_list.view.*
 
 class MainActivity : AppCompatActivity() {
 
     var listBiodata : ArrayList<ModelBiodata> = ArrayList()
-    lateinit var rvBiodata : RecyclerView
     lateinit var adapterBiodata : AdapterRecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initRecyclerView() {
-        rvBiodata = findViewById(R.id.biodata_rv);
         val llm = LinearLayoutManager(this)
         rvBiodata.layoutManager = llm
         val itemDecoration = RecyclerViewMargin(20)
@@ -69,12 +68,10 @@ class MainActivity : AppCompatActivity() {
 
 
         class MyViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-            val name = view.findViewById<TextView>(R.id.name_tv)
-            val email = view.findViewById<TextView>(R.id.email_tv)
 
             fun bind(item: ModelBiodata, clickListener: (ModelBiodata) -> Unit){
-                name.text = item.nama
-                email.text = item.email
+                view.itemName.text = item.nama
+                view.itemEmail.text = item.email
                 view.setOnClickListener {clickListener(item)}
             }
         }
