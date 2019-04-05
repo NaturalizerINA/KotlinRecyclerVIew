@@ -1,6 +1,5 @@
 package com.mukminullah.highorderfunction
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.mukminullah.highorderfunction.MainActivity.ModelBiodata
