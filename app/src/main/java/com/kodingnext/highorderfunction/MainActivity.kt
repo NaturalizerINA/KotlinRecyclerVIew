@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
             fun bind(item: ModelBiodata, clickListener: (ModelBiodata) -> Unit){
                 name.text = item.nama
                 email.text = item.email
-                itemView.setOnClickListener {clickListener(item)}
+                view.setOnClickListener {clickListener(item)}
             }
         }
     }
