@@ -88,6 +88,6 @@ class MainActivity : AppCompatActivity() {
     data class ModelBiodata(var nama:String, var email:String)
 
     fun onBiodataClicked (item : ModelBiodata) {
-        Toast.makeText(this, "You click person with name: ${item.nama} and with email: ${item.email}", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "You click person with name: "+item.nama+" and with email: ${item.email}", Toast.LENGTH_LONG).show()
     }
 }
