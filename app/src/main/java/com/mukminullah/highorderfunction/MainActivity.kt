@@ -87,7 +87,7 @@ class MainActivity : AppCompatActivity() {
         return listBiodata
     }
 
-    public data class ModelBiodata(var nama:String, var email:String) : Serializable
+    data class ModelBiodata(var nama:String, var email:String) : Serializable
 
     fun onBiodataClicked (item : ModelBiodata) {
         Toast.makeText(this, "You click person with name: "+item.nama+" and with email: ${item.email}", Toast.LENGTH_LONG).show()
