@@ -5,11 +5,13 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".DetailActivity"
+        android:padding="32dp">
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvBiodata"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+              android:text="Detail"
+              android:id="@+id/tvDetailText"
+              android:gravity="center"
+              android:textSize="16sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

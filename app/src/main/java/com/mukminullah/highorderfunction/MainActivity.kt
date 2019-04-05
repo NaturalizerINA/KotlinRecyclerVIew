@@ -1,16 +1,18 @@
 package com.mukminullah.highorderfunction
 
+import android.content.Intent
 import android.graphics.Rect
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.item_list.view.*
+import java.io.Serializable
 
 class MainActivity : AppCompatActivity() {
 
@@ -85,9 +87,12 @@ class MainActivity : AppCompatActivity() {
         return listBiodata
     }
 
-    data class ModelBiodata(var nama:String, var email:String)
+    public data class ModelBiodata(var nama:String, var email:String) : Serializable
 
     fun onBiodataClicked (item : ModelBiodata) {
         Toast.makeText(this, "You click person with name: "+item.nama+" and with email: ${item.email}", Toast.LENGTH_LONG).show()
+        val i = Intent(this, DetailActivity::class.java)
+        i.putExtra("data", item)
+        startActivity(i)
     }
 }
