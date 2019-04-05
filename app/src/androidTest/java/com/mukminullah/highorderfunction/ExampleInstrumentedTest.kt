@@ -1,4 +1,4 @@
-package com.kodingnext.highorderfunction
+package com.mukminullah.highorderfunction
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

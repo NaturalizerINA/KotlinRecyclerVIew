@@ -1,4 +1,4 @@
-package com.kodingnext.highorderfunction
+package com.mukminullah.highorderfunction
 
 import org.junit.Test
 

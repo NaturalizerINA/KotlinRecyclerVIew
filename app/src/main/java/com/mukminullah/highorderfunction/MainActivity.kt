@@ -1,4 +1,4 @@
-package com.kodingnext.highorderfunction
+package com.mukminullah.highorderfunction
 
 import android.graphics.Rect
 import android.support.v7.app.AppCompatActivity
@@ -29,13 +29,15 @@ class MainActivity : AppCompatActivity() {
         val itemDecoration = RecyclerViewMargin(20)
         rvBiodata.addItemDecoration(itemDecoration)
         listBiodata = initData()
-        adapterBiodata = AdapterRecyclerView(listBiodata, { item : ModelBiodata -> onBiodataClicked(item) })
+        adapterBiodata = AdapterRecyclerView(
+            listBiodata,
+            { item: ModelBiodata -> onBiodataClicked(item) })
         rvBiodata.adapter = adapterBiodata
     }
 
     class RecyclerViewMargin(private var margin: Int) : RecyclerView.ItemDecoration() {
         override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
-            val position = parent.getChildAdapterPosition(view);
+            val position = parent.getChildAdapterPosition(view)
             if(position == 0) outRect.top = margin
             outRect.bottom = margin
             outRect.left = margin
@@ -46,12 +48,9 @@ class MainActivity : AppCompatActivity() {
     class AdapterRecyclerView(
         private val listBiodata: ArrayList<ModelBiodata> = ArrayList(),
         private val onClickFunction : (ModelBiodata) -> Unit
-    )
-        : RecyclerView.Adapter<AdapterRecyclerView.MyViewHolder>() {
+    ) : RecyclerView.Adapter<AdapterRecyclerView.MyViewHolder>() {
 
-        init {
-            notifyDataSetChanged()
-        }
+        init { notifyDataSetChanged() }
 
         override fun onCreateViewHolder(p0: ViewGroup, p1: Int): MyViewHolder {
             val view : View = LayoutInflater.from(p0.context).inflate(R.layout.item_list, p0, false)
@@ -79,7 +78,8 @@ class MainActivity : AppCompatActivity() {
 
     fun initData() : ArrayList<ModelBiodata> {
         for (i in 1..10) {
-            val model = ModelBiodata("Rahmad SM", "rahmad.mukminullah@gmail.com")
+            val model =
+                ModelBiodata("Rahmad SM", "rahmad.mukminullah@gmail.com")
             listBiodata.add(model)
         }
         return listBiodata
